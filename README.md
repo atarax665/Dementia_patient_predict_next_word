@@ -22,4 +22,8 @@ pip install -r requirements.txt
 python app.py
 ```
 
+- For speech recognition
+```
+pip install SpeechRecognition pydub
+```
 The website will be live at http://127.0.0.1:8000
