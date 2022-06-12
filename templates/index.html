@@ -34,6 +34,14 @@
                     <br>
                     <h4>Type a word and press space to get suggestions</h4>
                 </div>
+                <div>
+                <h4>Give input through audio file</h4>
+                <form action="/" method="post" enctype="multipart/form-data">
+                    <input type="file" name="file"><br><br>
+                        <input type="submit" value="Upload">
+                    </form> 
+                </div>
+                <br>
                 <div class="form-group col-md-4">
                     <br>
                     <label for="max_words" id="label_max_words">Top k words: 5</label>
@@ -42,7 +50,7 @@
             </div>
 
             <div class="form-row">
-                <textarea class="form-control txt_input" id="input_text" rows="1"></textarea>
+                <textarea class="form-control txt_input" id="input_text" rows="1">{{ text }}</textarea>
             </div>
 
             <h4> Predictions </h4>
