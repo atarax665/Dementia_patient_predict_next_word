@@ -72,3 +72,23 @@ jQuery(document).ready(function () {
         });
     })
 })
+var recognition = new webkitSpeechRecognition();
+
+recognition.onresult = function(event) { 
+  var saidText = "";
+  for (var i = event.resultIndex; i < event.results.length; i++) {
+    if (event.results[i].isFinal) {
+      saidText = event.results[i][0].transcript;
+    } else {
+      saidText += event.results[i][0].transcript;
+    }
+  }
+
+  document.getElementById('input_text').value = saidText;
+  console.log(saidText);
+
+}
+
+function startRecording(){
+  recognition.start();
+}
