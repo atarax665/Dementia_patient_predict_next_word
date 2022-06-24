@@ -73,6 +73,8 @@ jQuery(document).ready(function () {
     })
 })
 var recognition = new webkitSpeechRecognition();
+recognition.continuous = true;
+recognition.interimResults = true;
 
 recognition.onresult = function(event) { 
   var saidText = "";
@@ -86,9 +88,13 @@ recognition.onresult = function(event) {
 
   document.getElementById('input_text').value = saidText;
   console.log(saidText);
-
 }
 
 function startRecording(){
   recognition.start();
+}
+function stopRecording()
+{
+    recognition.stop();
+    document.getElementById('input_text').focus();
 }
